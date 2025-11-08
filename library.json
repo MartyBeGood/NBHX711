@@ -1,0 +1,24 @@
+{
+    "name": "Non-Blocking HX711 Library",
+    "description": "Non-blocking driver for the HX711 ADC with instant averages. Allows you to use the inexpensive HX711 strain gauge amplifier and 24-bit ADC to build scales, force gauges and other sensors.",
+    "keywords": [
+        "HX711",
+        "ADC",
+        "strain gauge",
+        "scale",
+        "force gauge",
+        "non-blocking"
+    ],
+    "version": "1.0.2",
+    "authors": [
+        {
+            "name": "Whandall",
+            "email": "whandall@gmx.de"
+        },
+        {
+            "name": "MartyBeGood",
+            "email": "martybegood@gmx.com",
+            "maintainer": true
+        }
+    ]
+}
