@@ -1,6 +1,9 @@
 #include <Arduino.h>
 #include <NBHX711.h>
 
+constexpr byte MIN_HISTORY_SIZE = 6;
+constexpr byte MAX_HISTORY_SIZE = 255 / 3;
+
 NBHX711::NBHX711(byte data, byte clock, byte depth, byte gain) : 
 	dataPin(data),
 	clockPin(clock),
@@ -10,7 +13,7 @@ NBHX711::NBHX711(byte data, byte clock, byte depth, byte gain) :
 	histBuffer(NULL),
 	curr(0)
 {
-	histSize = 3 * min(max(depth, 6), 255/3);
+	histSize = 3 * min(max(depth, MIN_HISTORY_SIZE), MAX_HISTORY_SIZE);
 	histBuffer = new byte[histSize];
 	if (!histBuffer) {
 		histSize = 0;
