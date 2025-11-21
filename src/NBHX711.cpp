@@ -26,7 +26,6 @@ NBHX711::NBHX711(byte data, byte clock, byte depth, byte gain) :
 
 NBHX711::~NBHX711() {
 	delete[] histBuffer;
-	pinMode(clockPin, INPUT);
 }
 
 byte NBHX711::getHistSize() {

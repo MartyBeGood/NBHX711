@@ -67,10 +67,14 @@ protected:
  */
 	bool isReady();
 /**
- *	conversion function
- *	convert 3 byte signed value to signed 32 bit long
- *	@param from [in] pointer to little endian 24 bit value
- *	@return 32 bit signed long
+ * NBHX711 constructor
+ * @param dout   Data pin (DOUT) for this HX711 instance. Each HX711 must have a unique data pin.
+ * @param pd_sck Clock pin (PD_SCK), can be shared among multiple HX711 instances.
+ * @param depth  Depth of the cyclic history buffer (minimum 6, maximum 85).
+ * @param gain   Selected gain and channel (default: ChA128).
+ *
+ * To use multiple HX711 boards with a shared clock line, pass the same clock pin to each instance,
+ * and a unique data pin for each. The driver will handle reading from each HX711 independently.
  */
 	long cvt24(byte* from);
 /**
